@@ -1,0 +1,29 @@
+baseurl = "http://vity-in-usa.com/"
+title = "First steps"
+languageCode = "ru-RU"
+paginate = 10
+Copyright = "All rights reserved - 2015"
+canonifyurls = true
+DisqusShortname = "vity-in-usa"
+
+[permalinks]
+  # :slug the content’s slug (or title if no slug)
+  post = "/:year/:month/:day/:slug/"
+
+[params]
+  description = "Kyiv-Chicago-Seattle-Chicago…"
+  # cover = "images/cover.jpg"
+  # author = "marikomy"
+  # authorlocation = "Chicago, USA"
+  # authorwebsite = "http://vity-in-usa.com/"
+  # bio= "my bio"
+  # logo = "images/logo.png"
+  # googleAnalyticsUserID = "UA-79101-12"
+  # Optional RSS-Link, if not provided it defaults to the standard index.xml
+  # facebookName = ""
+  # linkedinName = ""
+  # set true if you are not proud of using Hugo (true will hide the footer note "Proudly published with HUGO.....")
+  hideHUGOSupport = true
+
+[taxonomies]
+  tag = "tags"

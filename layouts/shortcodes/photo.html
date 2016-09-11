@@ -1,0 +1,12 @@
+<figure class="wp-caption">
+  {{ $section := .Page.Section }}
+  {{ $year := .Page.Date.Year }}
+  {{ $title := .Page.LinkTitle | urlize }}
+  {{ $url := delimit (slice $section $year $title (.Get 0) ) "/" }}
+  <a href="/{{ $url }}">
+    <img src="/{{ $url }}" {{ if len .Params | eq 2 }} alt="{{ .Get 1 }}"{{ end }} />
+  </a>
+    {{ if len .Params | eq 2 }}
+    <figcaption class="wp-caption-text">{{ .Get 1 }}</figcaption>
+    {{ end }}
+</figure>
