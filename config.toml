@@ -1,4 +1,5 @@
 baseurl = "http://vity-in-usa.com/"
+theme = "grisaille"
 title = "First steps"
 languageCode = "ru-RU"
 paginate = 10

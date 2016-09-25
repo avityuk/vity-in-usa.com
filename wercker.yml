@@ -4,7 +4,6 @@ build:
   steps:
     - arjen/hugo-build:
         version: "0.16"
-        theme: "grisaille"
         disable_pygments: true
 
 deploy:
