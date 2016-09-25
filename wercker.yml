@@ -1,0 +1,16 @@
+box: debian
+build:
+  steps:
+    - arjen/hugo-build:
+      version: "HEAD"
+      theme: "grisaille"
+      disable_pygments: true
+
+deploy:
+  steps:
+    - install-packages:
+        packages: git ssh-client
+    - lukevivier/gh-pages@0.2.1:
+        token: $GIT_TOKEN
+        domain: vity-in-usa.com
+        basedir: public
