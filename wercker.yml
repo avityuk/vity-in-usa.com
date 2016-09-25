@@ -1,10 +1,11 @@
-box: debian
+box: wercker/golang
+
 build:
   steps:
     - arjen/hugo-build:
-      version: "0.16"
-      theme: "grisaille"
-      disable_pygments: true
+        version: "0.16"
+        theme: "grisaille"
+        disable_pygments: true
 
 deploy:
   steps:
