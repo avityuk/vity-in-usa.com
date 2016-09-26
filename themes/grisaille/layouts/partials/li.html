@@ -1,0 +1,41 @@
+{{ $baseurl := .Site.BaseURL }}
+
+<li class="post type-{{ .Section }}">
+  <h2 class="postTitle"><a href="{{ .RelPermalink }}" rel="bookmark">{{ .Title }}</a></h2>
+  <div class="clearfix"></div>
+  <p class="theDate"><a href="{{ .RelPermalink }}" rel="bookmark">{{ .Date.Format "2 Jan 2006" }}</a></p>
+
+  <div class="post-wrap">
+      {{if .Params.image}}
+      <a href="{{.RelPermalink}}">
+        {{if or (eq (substr .Params.image 0 7) "http://") (eq (substr .Params.image 0 8) "https://")}}
+        <img width="250" height="200" src="{{.Params.image}}" class="attachment-following-post-thumbnails"/>
+        {{ else }}
+        <img width="250" height="200" src="{{ $baseurl }}{{.Params.image}}" class="attachment-following-post-thumbnails"/>
+        {{end}}
+      </a>
+    {{end}}
+
+    <p>
+      {{ .Summary }}
+      <br/>
+      {{ if .Truncated }}
+      <a class="more-link" href="{{.RelPermalink}}">Continue reading</a>
+      {{ end }}
+    </p>
+  </div>
+
+  <p class="postMeta">
+    <small>
+      {{ if .Params.tags }}
+      <span class="tag-links">
+        Tags:
+        {{range .Params.tags}}
+        <a href="{{ $baseurl }}tags/{{ . | urlize }}/" rel="tag">{{ . }}</a>
+        {{ end }}
+      </span>
+      {{ end }}
+    </small>
+  </p>
+  <hr class="noCss" />
+</li>

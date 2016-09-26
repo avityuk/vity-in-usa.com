@@ -1,0 +1,56 @@
+{{ partial "header.html" . }}
+{{ $baseurl := .Site.BaseURL }}
+
+<div class="post type-{{ .Section }}">
+  <h1 class="postTitle"><a href="{{.RelPermalink}}" rel="bookmark">{{.Title}}</a></h1>
+  {{ if ne .Params.comments false}}
+  {{ if .Site.DisqusShortname }}
+  <span class="comments"><a href="#disqus_thread">0</a></span>
+  {{ end }}
+  {{ end }}
+  <div class="clearfix"></div>
+  <p class="theDate"><a href="{{.RelPermalink}}>" rel="bookmark">{{ .Date.Format "Jan 2, 2006" }}</a></p>
+
+  <div class="post-wrap">
+    {{if .Params.image}}
+      <p>
+        {{if or (eq (substr .Params.image 0 7) "http://") (eq (substr .Params.image 0 8) "https://")}}
+        <img src="{{.Params.image}}"/>
+        {{ else }}
+        <img src="{{ $baseurl }}{{.Params.image}}"/>
+        {{end}}
+      </p>
+    {{end}}
+  	{{ .Content }}
+  </div>
+  <!-- TODO:related pages -->
+  <p class="postMeta">
+    <small>
+      {{ if .Params.tags }}
+        <span class="tag-links">
+          Tags:
+          {{range .Params.tags}}
+          <a href="{{ $baseurl }}tags/{{ . | urlize }}/" rel="tag">{{ . }}</a>
+          {{ end }}
+        </span>
+      {{ end }}
+    </small>
+  </p>
+  <hr class="noCss" />
+</div>
+
+<div class="post-link">
+  <div class="pagination-newer">
+    {{if .NextInSection}}
+      <a href="{{.NextInSection.Permalink}}" rel="next">{{.NextInSection.Title}}</a> &raquo;
+    {{end}}
+  </div>
+  <div class="pagination-older">
+    {{if .PrevInSection}}
+      &laquo; <a href="{{.PrevInSection.Permalink}}" rel="prev">{{.PrevInSection.Title}}</a>
+    {{end}}
+  </div> 
+</div>
+
+{{ partial "disqus.html" . }}
+{{ partial "footer.html" . }}

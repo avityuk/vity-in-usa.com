@@ -1,0 +1,22 @@
+<div class="wrap">
+  <div class="sidebaritem tag_cloud">
+    {{ $.Scratch.Set "total" 0 }}
+    {{ range $name, $items := .Site.Taxonomies.tags }}
+      {{ $.Scratch.Add "total" (len $items) }}
+    {{ end }}
+    {{ $totalTags := $.Scratch.Get "total" }}
+    {{ range $name, $items := .Site.Taxonomies.tags }}
+      {{ $fontSize := add (div (mul (len $items) 300 ) $totalTags) 5 }}
+      <a href="{{ $.Site.BaseURL }}tags/{{ $name | urlize | lower  }}" style="font-size: {{$fontSize}}pt;">{{ $name }}</a>
+    {{ end }}
+  </div>
+
+  <div class="sidebaritem recent_posts">
+    <h3>Свежие записи</h3>
+    <ul>
+      {{ range first 5 .Site.Pages.ByDate.Reverse }}
+      <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+      {{ end }}
+      </ul>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+{{ partial "header.html" . }}
+{{ $paginator := .Paginator }}
+{{ $baseurl := .Site.BaseURL }}
+
+<ol id="posts">
+  {{ range $index, $page := $paginator.Pages }}
+    {{ partial "li.html" . }}
+  {{ end }}
+</ol>
+
+{{ partial "pagination.html" $paginator }}
+{{ partial "footer.html" . }}

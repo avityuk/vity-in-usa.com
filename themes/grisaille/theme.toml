@@ -1,0 +1,16 @@
+name = "Grisaille"
+license = "GNU General Public License v2.0"
+licenselink = "http://www.gnu.org/licenses/gpl-2.0.html"
+description = "Port of Grisaille theme from WordPress"
+homepage = "https://wordpress.org/themes/grisaille/"
+tags = ["blog"]
+features = ["disqus", "google analytics","share"]
+min_version=0.16
+
+[author]
+  name = "Andriy Vityuk"
+
+[original]
+  name = "Grisaille"
+  homepage = "https://wordpress.org/themes/grisaille/"
+  repo = "https://github.com/TryGhost/Casper"

@@ -1,0 +1,20 @@
+    </div>
+ 
+    <div id="secondaryContent">
+      {{ partial "navigation.html" . }}
+    </div>
+
+    <div id="footer">
+      {{if .Site.Params.hideHUGOSupport }}
+      <p>Copyright &copy; {{.Site.Copyright | safeHTML}} | {{.Site.Title}} is proudly powered by <a href="http://gohugo.io" class="icon-hugo">HUGO</a></p>
+      {{else}}
+      <p>Copyright &copy; {{.Site.Copyright | safeHTML}} | {{.Site.Title}}</p>
+      {{end}}
+    </div>
+      
+  </div> <!-- end #canvas -->
+  {{ if .Site.Params.customFooterPartial }}
+      {{ partial .Site.Params.customFooterPartial . }}
+  {{ end }}
+  </body>
+</html>
