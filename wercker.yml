@@ -3,8 +3,7 @@ box: debian
 build:
   steps:
     - arjen/hugo-build:
-        version: "HEAD"
-        disable_pygments: true
+        version: "0.16"
 
 deploy:
   steps:
