@@ -7,11 +7,11 @@ build:
         disable_pygments: true
     - install-packages:
         packages: imagemagick
-    - andriyv/resize-images:
+    - avityuk/resize-images:
         geometry: 500
         basedir: public/post
         suffix: _s
-    - andriyv/resize-images:
+    - avityuk/resize-images:
         geometry: 2048
         basedir: public/post
 deploy:
