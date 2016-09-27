@@ -5,10 +5,7 @@ build:
     - arjen/hugo-build:
         version: "0.16"
         disable_pygments: true
-deploy:
-  steps:
-    - install-packages:
-        packages: git ssh-client
+    - install-packages: imagemagick
     - andriyv/resize-images:
         geometry: 500
         basedir: public/post
@@ -16,6 +13,10 @@ deploy:
     - andriyv/resize-images:
         geometry: 2048
         basedir: public/post
+deploy:
+  steps:
+    - install-packages:
+        packages: git ssh-client
     - lukevivier/gh-pages@0.2.1:
         token: $GIT_TOKEN
         domain: vity-in-usa.com
