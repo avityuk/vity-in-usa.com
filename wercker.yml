@@ -5,7 +5,8 @@ build:
     - arjen/hugo-build:
         version: "0.16"
         disable_pygments: true
-    - install-packages: imagemagick
+    - install-packages:
+        packages: imagemagick
     - andriyv/resize-images:
         geometry: 500
         basedir: public/post
