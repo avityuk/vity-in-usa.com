@@ -10,7 +10,7 @@ build:
     - avityuk/resize-images:
         geometry: 500
         basedir: public/post
-        suffix: _s
+        resized_suffix: _s
     - avityuk/resize-images:
         geometry: 2048
         basedir: public/post
