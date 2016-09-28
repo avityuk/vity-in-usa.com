@@ -8,14 +8,14 @@ build:
     - install-packages:
         packages: imagemagick
     - avityuk/resize-images:
-        geometry: 500
-        quality: 90
-        basedir: public/post
-        resized_suffix: _s
-    - avityuk/resize-images:
         geometry: 2048
         quality: 90
-        exclude_pattern: "*_s.jpg"
+        basedir: public/post
+        resized_suffix: _l
+    - avityuk/resize-images:
+        geometry: 500
+        quality: 90
+        exclude_pattern: "*_l.jpg"
         basedir: public/post
     - script:
         name: remove content
