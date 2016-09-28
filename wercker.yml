@@ -9,13 +9,16 @@ build:
         packages: imagemagick
     - avityuk/resize-images:
         geometry: 500
-        quality: 82
+        quality: 90
         basedir: public/post
         resized_suffix: _s
     - avityuk/resize-images:
         geometry: 2048
-        quality: 82
+        quality: 90
         basedir: public/post
+    - script:
+        name: remove content
+        code: rm -R -f content
 deploy:
   steps:
     - install-packages:
