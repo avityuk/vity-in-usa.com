@@ -9,10 +9,12 @@ build:
         packages: imagemagick
     - avityuk/resize-images:
         geometry: 500
+        resize_quality: 82
         basedir: public/post
         resized_suffix: _s
     - avityuk/resize-images:
         geometry: 2048
+        resize_quality: 82
         basedir: public/post
 deploy:
   steps:
