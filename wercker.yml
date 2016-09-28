@@ -15,7 +15,7 @@ build:
     - avityuk/resize-images:
         geometry: 2048
         quality: 90
-        exclude_pattern: *_s.jpg
+        exclude_pattern: "*_s.jpg"
         basedir: public/post
     - script:
         name: remove content
