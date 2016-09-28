@@ -14,7 +14,7 @@ build:
         resized_suffix: _s
     - avityuk/resize-images:
         geometry: 2048
-        resize_quality: 82
+        resized_quality: 82
         basedir: public/post
 deploy:
   steps:
